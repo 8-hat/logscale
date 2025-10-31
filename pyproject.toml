@@ -3,7 +3,7 @@ name = "logscale"
 description = "Compute orders of magnitude"
 readme = "README.md"
 authors = [
-    { name = "cyrraz", email = "code.cyrraz@protonmail.com" }
+    { name = "cyrraz", email = "cyrraz.code@protonmail.com" }
 ]
 requires-python = ">=3.9"
 dependencies = []
