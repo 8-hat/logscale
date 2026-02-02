@@ -2,12 +2,22 @@ name: CD
 
 on:
   workflow_dispatch:
+  pull_request:
   push:
     branches:
       - main
   release:
     types:
       - published
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Many color libraries just need this to be set to any value, but at least
+  # one distinguishes color depth, where "3" -> "256-bit color".
+  FORCE_COLOR: 3
 
 jobs:
   build:
@@ -34,6 +44,8 @@ jobs:
 
     permissions:
       id-token: write
+      attestations: write
+      contents: read
 
     steps:
       - name: Download all the dists
@@ -65,6 +77,8 @@ jobs:
       url: https://pypi.org/p/logscale
     permissions:
       id-token: write
+      attestations: write
+      contents: read
 
     steps:
       - name: Download all the dists

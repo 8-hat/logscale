@@ -1,1 +1,1 @@
-# ::: logscale.example
+# ::: logscale.order_of_magnitude
