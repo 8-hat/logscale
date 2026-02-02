@@ -39,7 +39,7 @@ jobs:
       - name: Download all the dists
         uses: actions/download-artifact@v7
         with:
-          name: python-package-distributions
+          name: Packages
           path: dist/
 
       - name: Generate artifact attestation for sdist and wheel
@@ -70,7 +70,7 @@ jobs:
       - name: Download all the dists
         uses: actions/download-artifact@v7
         with:
-          name: python-package-distributions
+          name: Packages
           path: dist/
 
       - name: Generate artifact attestation for sdist and wheel
